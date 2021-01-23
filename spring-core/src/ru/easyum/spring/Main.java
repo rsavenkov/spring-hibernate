@@ -9,5 +9,11 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
         HelloWorld helloWorldBean = context.getBean("helloWorld", HelloWorld.class);
         System.out.println(helloWorldBean);
+
+        FactorySelfCreatedBean factorySelfCreatedBean = (FactorySelfCreatedBean) context.getBean("FactorySelfCreatedBean");
+        System.out.println(factorySelfCreatedBean);
+
+        HelloWorld helloWorld = context.getBean("helloWorldFromFactory", HelloWorld.class);
+        System.out.println(helloWorld);
     }
 }

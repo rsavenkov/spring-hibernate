@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="course" class="ru.easyum.spring.di.Course">
+        <constructor-arg type="java.lang.String" value="Spring+Hibernate"/>
+        <constructor-arg type="int" value="32"/>
+    </bean>
+
+    <bean id="student" class="ru.easyum.spring.di.Student">
+        <constructor-arg ref="course"/>
+        <constructor-arg type="java.lang.String" value="Иванов Иван"/>
+    </bean>
+
+    <bean id="teacher" class="ru.easyum.spring.di.Teacher">
+        <property name="course" ref="course"/>
+        <property name="student" ref="student"/>
+    </bean>
+
+</beans>

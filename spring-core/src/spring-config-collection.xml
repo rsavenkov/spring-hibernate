@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="spring-config-di.xml"/>
+
+    <bean name="school" class="ru.easyum.spring.di.School">
+        <property name="contacts">
+            <props>
+                <prop key="name">EasyUM</prop>
+                <prop key="email">it@easyum.ru</prop>
+                <prop key="phone">+ 7 (985) 589 85 01</prop>
+            </props>
+        </property>
+        <property name="courses">
+            <list>
+                <ref bean="course"/>
+            </list>
+        </property>
+        <property name="students">
+            <map>
+                <entry key="2" value-ref="student"/>
+            </map>
+        </property>
+        <property name="teachers">
+            <ref bean="teacher"/>
+        </property>
+    </bean>
+
+</beans>

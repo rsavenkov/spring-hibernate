@@ -4,6 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="helloWorld" class="ru.easyum.spring.HelloWorld"/>
+    <bean id="helloWorld" class="ru.easyum.spring.HelloWorld" />
+
+    <bean name="FactorySelfCreatedBean" class="ru.easyum.spring.FactorySelfCreatedBean" factory-method="createInstance"/>
+
+    <bean name="FactoryBean" class="ru.easyum.spring.FactoryBean"/>
+
+    <bean id="helloWorldFromFactory" factory-bean="FactoryBean" factory-method="createHelloWorldInstance"/>
 
 </beans>
