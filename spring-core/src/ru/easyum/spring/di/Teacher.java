@@ -1,7 +1,12 @@
 package ru.easyum.spring.di;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class Teacher {
 
+    @Autowired
+    @Qualifier("course-java")
     private Course course;
     private Student student;
 
@@ -9,6 +14,7 @@ public class Teacher {
         this.course = course;
     }
 
+    @Autowired
     public void setStudent(Student student) {
         this.student = student;
     }

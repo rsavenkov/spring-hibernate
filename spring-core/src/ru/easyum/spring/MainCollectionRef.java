@@ -7,7 +7,7 @@ import ru.easyum.spring.di.School;
 public class MainCollectionRef {
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config-collection.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("config/xml/spring-config-collection.xml");
         School school = context.getBean("school", School.class);
         System.out.println(school);
     }

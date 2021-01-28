@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainScope {
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config-scope.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("config/xml/spring-config-scope.xml");
         for (int i = 0; i < 5; i++) {
             System.out.println(context.getBean("singleton"));
         }

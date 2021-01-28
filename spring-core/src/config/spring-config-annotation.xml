@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean id="student" class="ru.easyum.spring.di.Student">
+        <property name="fio" value="Петр Петров"/>
+    </bean>
+
+    <bean id="course-java" class="ru.easyum.spring.di.Course">
+        <constructor-arg type="java.lang.String" value="Spring+Hibernate"/>
+        <constructor-arg type="int" value="32"/>
+    </bean>
+
+    <bean id="course-python" class="ru.easyum.spring.di.Course">
+        <constructor-arg type="java.lang.String" value="Python+Web"/>
+        <constructor-arg type="int" value="64"/>
+    </bean>
+
+    <bean id="teacher" class="ru.easyum.spring.di.Teacher"/>
+
+</beans>

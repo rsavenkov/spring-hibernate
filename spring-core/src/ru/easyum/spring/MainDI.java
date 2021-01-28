@@ -8,7 +8,7 @@ import ru.easyum.spring.di.Teacher;
 public class MainDI {
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config-di.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("config/xml/spring-config-di.xml");
         Student student = context.getBean("student", Student.class);
         System.out.println(student);
 
