@@ -7,6 +7,6 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="ru.easyum.spring.component"/>
+    <context:component-scan base-package="ru.easyum.spring.component1"/>
 
 </beans>
