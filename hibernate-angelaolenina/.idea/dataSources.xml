@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="local H2" uuid="d5f48bc2-f831-4ffe-b5df-76b055e02a75">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:tcp://localhost:9092/data</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="jdbc" uuid="8eadf96b-eb6f-48b9-b142-db545e282aec">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>jdbc.properties
+
+C:/Users/Alex/IdeaProjects/spring-hibernate/hibernate/src/main/resources/jdbc.properties</remarks>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:tcp://localhost:9092/data</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="7ad25fc7-44f0-4190-885d-eed1890f78e9">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/Alex/IdeaProjects/spring-hibernate/hibernate/src/main/resources/hibernate.cfg.xml</remarks>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:tcp://localhost:9092/data</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="myPersistentDB/Hibernate" uuid="0e8eec1a-78df-4c31-bc32-d02067576b1e">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+C:/Users/Alex/IdeaProjects/spring-hibernate/hibernate/src/main/resources/META-INF/persistence.xml</remarks>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:tcp://localhost:9092/data</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="dataSource" uuid="e9162b91-2893-41bd-8468-6f2171d366eb">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>jakarta commons-dbcp
+
+C:/Users/Alex/IdeaProjects/spring-hibernate/hibernate/src/main/resources/spring-config.xml</remarks>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:tcp://localhost:9092/data</jdbc-url>
+    </data-source>
+  </component>
+</project>
