@@ -2,6 +2,8 @@ package ru.avenue.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -72,10 +74,23 @@ public class CourseController {
         return "/jsp/create";
     }
 
-    @PostMapping("/course/save")
+    @PostMapping("/course/save1")
     public String save(@RequestParam String name, @RequestParam int duration) {
         Course course = service.saveCourse(new Course(name, duration));
         return "redirect:/course/get?courseId=" + course.getId();
+    }
+
+    @GetMapping(path ="/course/add")
+    public String addCourse(Model model) {
+        return "courseAdd";
+    }
+
+    @PreAuthorize("#username == authentication.principal.username")
+//    @Secured({"ROLE_ADMIN", "ROLE_SUPER_ADMIN"})
+    @PostMapping(path = "/course/save")
+    public String saveCourse(@RequestParam String name, @RequestParam int duration) {
+        service.saveCourse(new Course(name, duration));
+        return "redirect:/courses";
     }
 
 }
