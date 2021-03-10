@@ -23,7 +23,7 @@ create table if not exists authorities(
 
 CREATE UNIQUE index IF NOT EXISTS ix_auth_username on authorities(username, authority);
 
-DELETE FROM AUTHORITIES;
-DELETE FROM users;
-INSERT INTO users(username, password, enabled) VALUES('admin', '$2a$10$wrqJsQwb77GmKXgirfnp.elL/l0BMTUCgqazKv2kvs.mdpG6regfi', true);
-INSERT INTO authorities(username, authority) VALUES('admin', 'ROLE_ADMIN');
+-- DELETE FROM AUTHORITIES;
+-- DELETE FROM users;
+-- INSERT INTO users(username, password, enabled) VALUES('admin', '$2a$10$wrqJsQwb77GmKXgirfnp.elL/l0BMTUCgqazKv2kvs.mdpG6regfi', true);
+-- INSERT INTO authorities(username, authority) VALUES('admin', 'ROLE_ADMIN');

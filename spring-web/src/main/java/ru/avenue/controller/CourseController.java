@@ -4,9 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import ru.avenue.MyUserPrincipal;
 import ru.avenue.domains.Course;
 import ru.avenue.domains.Teacher;
 import ru.avenue.repository.CourseRepository;
@@ -30,6 +32,8 @@ public class CourseController {
         Long total = repository.count();
         List<Course> courses = service.getPage(pageNo, pageSize);
         model.addAttribute("courses", courses);
+        MyUserPrincipal principal = (MyUserPrincipal) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        model.addAttribute("user", principal.getUsername());
         model.addAttribute("pages", new Integer[(int) Math.ceil((double) total / 5)]);
         return "courses";
     }
