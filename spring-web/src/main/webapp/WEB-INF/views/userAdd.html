@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление пользователя</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Форма добавления пользователя</h1>
+    <div class="alert alert-danger" role="alert" th:if="${param.confirmedError != null}">
+        Пароли не совпадают!
+    </div>
+    <form action="/user/save" method="post">
+        <div class="form-group">
+            <label for="login">Логин</label>
+            <input name="login" id="login" type="text" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль</label>
+            <input name="password" id="password" type="password" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Повторите пароль</label>
+            <input name="confirmPassword" id="confirmPassword" type="password" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="role">Роль</label>
+            <select id="role" class="form-control" name="role">
+                <option value="ROLE_ADMIN">Админ</option>
+                <option value="ROLE_TEACHER">Учитель</option>
+                <option value="ROLE_STUDENT">Студент</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input name="enabled" id="enabled" type="checkbox" class="form-check-input">
+            <label for="enabled">Активен</label>
+        </div>
+        <button type="submit" class="btn btn-success">Создать</button>
+        <a href="/users" role="button" class="btn btn-primary">Обратно к списку</a>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>

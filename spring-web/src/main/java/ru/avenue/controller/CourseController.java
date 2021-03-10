@@ -1,5 +1,6 @@
 package ru.avenue.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.annotation.Secured;
@@ -20,6 +21,8 @@ import java.util.stream.Collectors;
 @Controller
 public class CourseController {
 
+    private static final Logger logger = Logger.getLogger(CourseController.class);
+
     @Autowired
     CourseService service;
     @Autowired
@@ -29,6 +32,9 @@ public class CourseController {
     public String allCourses(@RequestParam(defaultValue = "0") Integer pageNo,
                              @RequestParam(defaultValue = "5") Integer pageSize,
                              Model model) {
+        if (logger.isInfoEnabled()) {
+            logger.info("Page number = " + pageNo + " page size = " + pageSize);
+        }
         Long total = repository.count();
         List<Course> courses = service.getPage(pageNo, pageSize);
         model.addAttribute("courses", courses);
